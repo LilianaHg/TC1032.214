@@ -27,6 +27,7 @@ while True:
     totals_ref = db.collection(collectionName).document('totals')
     totals_doc = totals_ref.get()
     totals_data = totals_doc.to_dict()
+    
     if totals_data == None:
         totals_ref.set({
         u'total_minutos_encendido': 1 if encendido else 0,
